@@ -1,0 +1,21 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "track-changes": "node docs/script/track-changes.js",
+    "submit-indexnow": "node docs/script/submit-indexnow.js",
+    "submit-indexnow:full": "node docs/script/submit-indexnow.js --full",
+    "submit-indexnow:dry": "node docs/script/submit-indexnow.js --full --dry-run"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "sitemap": "^8.0.0",
+    "tsx": "^4.7.0",
+    "vitepress": "^1.5.0"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  }
+}

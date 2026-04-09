@@ -1,0 +1,491 @@
+---
+layout: home
+title: "ChatGPT中文版 - 最新ChatGPT镜像站 | 免费使用ChatGPT"
+description: "ChatGPT中文版，提供最新最稳定的ChatGPT镜像服务。支持GPT4.0，支持AI对话、AI写作、AI绘画、AI PPT等全方位功能。立即体验全球领先的人工智能对话模型。"
+head:
+  - - meta
+    - name: keywords
+      content: ChatGPT, ChatGPT中文版, ChatGPT镜像, GPT4.0, AI对话, Deepseek镜像, ChatGPT免费使用
+  - - meta
+    - name: author
+      content: ChatGPT中文版
+  - - meta
+    - property: og:title
+      content: ChatGPT中文版 - 最新ChatGPT镜像站
+  - - meta
+    - property: og:description
+      content: ChatGPT中文版，提供最新最稳定的ChatGPT镜像服务。支持GPT4.0，支持AI对话、AI写作、AI绘画、AI PPT等全方位功能。
+---
+
+<script setup>
+import AnimatedHero from './.vitepress/components/AnimatedHero.vue'
+</script>
+
+<AnimatedHero />
+
+<div class="feature-sections">
+  <div class="section-header fade-in">
+    <h1>ChatGPT中文版 - 探索全方位 AI 能力</h1>
+    <p>立即体验 ChatGPT 最新镜像站，让 AI 对话和智能创作为您的工作和生活带来革新。</p>
+  </div>
+
+  <section class="feature-section fade-in">
+    <div class="feature-content slide-in-left">
+      <h2>💬 ChatGPT 对话</h2>
+      <ul>
+        <li>🌐 支持 ChatGPT 全系列模型 4.0、4o、4omini、o1、o1 Pro</li>
+        <li>🔄 各模型灵活切换，持续更新最新 ChatGPT 模型</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-right">
+      <img src="/images/ai-chat.png" alt="ChatGPT对话功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section reverse fade-in">
+    <div class="feature-content slide-in-right">
+      <h2>📝 AI写作</h2>
+      <ul>
+        <li>✨ AI小红书、教学教案、学术论文、脚本生成、标书编写</li>
+        <li>✍️ AI润色、扩写、缩写、阅读理解、语法校正</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-left">
+      <img src="/images/ai-writing.png" alt="AI写作功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section fade-in">
+    <div class="feature-content slide-in-left">
+      <h2>🎨 AI绘画</h2>
+      <ul>
+        <li>🖼️ 内置Midjourney、Dalle绘画模型，一键实现指令绘图</li>
+        <li>🎨 支持上下文多轮修改出图</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-right">
+      <img src="/images/ai-painting.png" alt="AI绘画功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section reverse fade-in">
+    <div class="feature-content slide-in-right">
+      <h2>📊 AIPPT</h2>
+      <ul>
+        <li>📝 输入标题，AI自动生成大纲、内容和素材</li>
+        <li>📈 支持根据上传的资料生成对应的PPT</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-left">
+      <img src="/images/ai-ppt.png" alt="AIPPT功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section fade-in">
+    <div class="feature-content slide-in-left">
+      <h2>📂 AI读文件</h2>
+      <ul>
+        <li>📄 支持Word、PPT、PDF、TXT、Markdown、JSON等格式文件上传和对话</li>
+        <li>🔍 显示信息来源，回答内容的原文引用，避免信息幻觉</li>
+        <li>🗂️ 支持将多个文件组合为知识库，便于管理和对话</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-right">
+      <img src="/images/ai-read-file.png" alt="AI读文件功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section reverse fade-in">
+    <div class="feature-content slide-in-right">
+      <h2>🌐 AI翻译</h2>
+      <ul>
+        <li>🌍 提供全球主流语言的先进翻译功能</li>
+        <li>📝 支持文字翻译和文档翻译，各行业AI翻译专家</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-left">
+      <img src="/images/ai-translation.png" alt="AI翻译功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section fade-in">
+    <div class="feature-content slide-in-left">
+      <h2>🤖 AI助手</h2>
+      <ul>
+        <li>🔧 提供400+ 14个行业领域助手</li>
+        <li>🛠️ 支持自定义专属助手</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-right">
+      <img src="/images/ai-assistant.png" alt="AI助手功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section reverse fade-in">
+    <div class="feature-content slide-in-right">
+      <h2>🔌 AI插件</h2>
+      <ul>
+        <li>🗺️ 提供思维导图、文献查询、实时天气、网站爬虫等插件</li>
+        <li>🚀 充分扩展大模型边界，实现更多功能</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-left">
+      <img src="/images/ai-plugin.png" alt="AI插件功能展示" />
+    </div>
+  </section>
+
+  <section class="feature-section fade-in">
+    <div class="feature-content slide-in-left">
+      <h2>☁️ 云端同步</h2>
+      <ul>
+        <li>📱 支持电脑、手机、Pad端的多端实时同步</li>
+        <li>🌐 让 AI 能力无缝融入日常网页浏览场景</li>
+      </ul>
+    </div>
+    <div class="feature-image slide-in-right">
+      <img src="/images/ai-sync.png" alt="云端同步功能展示" />
+    </div>
+  </section>
+</div>
+
+<div class="external-links">
+  <h2>友情链接</h2>
+  <div class="external-buttons">
+    <a href="https://chat.lify.vip" target="_blank" rel="noopener" class="external-button">
+      <img src="/icons/chatgpt-chinese-site.png" alt="ChatGPT Chinese Site" />
+      ChatGPT中文站
+    </a>
+    <a href="https://chatgpt.com" target="_blank" rel="noopener" class="external-button">
+      <img src="/icons/chatgpt-site.png" alt="ChatGPT官网" />
+      ChatGPT官网
+    </a>
+    <a href="https://chat.lify.vip" target="_blank" rel="noopener" class="external-button">
+      <img src="/icons/deepseek.svg" alt="Deepseek镜像" />
+      Deepseek镜像
+    </a>
+        <a href="https://chat.lify.vip" target="_blank" rel="noopener" class="external-button">
+      <img src="/icons/midjourney.svg" alt="Midjourney AI绘画" />
+      Midjourney AI绘画
+    </a>
+  </div>
+</div>
+
+
+<style>
+.feature-sections {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: var(--vp-c-text-2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 8rem;
+  align-items: center;
+  opacity: 0;
+}
+
+.feature-section.reverse {
+  direction: rtl;
+}
+
+.feature-section.reverse > * {
+  direction: ltr;
+}
+
+.feature-content {
+  padding: 3rem;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-mute) 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.feature-content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-content h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.feature-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-content li {
+  margin-bottom: 1.25rem;
+  color: var(--vp-c-text-1);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feature-image {
+  position: relative;
+  padding: 1rem;
+}
+
+.feature-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  padding: 2px;
+  background: linear-gradient(135deg, #2563eb33, #a855f733);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-mute) 100%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  color: var(--vp-c-text-2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* 优化动画效果 */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from { 
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from { 
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slide-in-left {
+  opacity: 0;
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.slide-in-right {
+  opacity: 0;
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+/* Intersection Observer 触发动画 */
+.feature-section.visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .section-header h1 {
+    font-size: 2.25rem;
+  }
+  
+  .section-header p {
+    font-size: 1.1rem;
+  }
+
+  .feature-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .feature-content {
+    padding: 2rem;
+  }
+  
+  .feature-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .feature-content li {
+    font-size: 1rem;
+  }
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-mute) 100%);
+}
+
+.feature-image img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(37, 99, 235, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  filter: brightness(1.05);
+}
+
+/* 添加图片加载动画 */
+@keyframes imageAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.feature-image img {
+  animation: imageAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 添加外链按钮区域 */
+.external-links {
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.external-links h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #2563eb, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.external-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.external-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft) 0%, var(--vp-c-bg-mute) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.external-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.external-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* 设置暗黑模式 */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--vp-c-bg);
+}
+</style>
+
+<script>
+// 当元素进入视口时添加动画
+document.addEventListener('DOMContentLoaded', function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.feature-section').forEach(section => {
+    observer.observe(section);
+  });
+});
+</script> 
