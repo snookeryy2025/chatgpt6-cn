@@ -1,8 +1,7 @@
 import { defineConfig } from 'vitepress'
-import { generateSitemaps } from './utils/sitemap'
-import { generateSidebarConfig } from './utils/routes'
 import { submitToIndexNow } from './utils/indexnow'
-import { getAllRoutes } from './utils/routes'
+import { generateSidebarConfig, getAllRoutes } from './utils/routes'
+import { generateSitemaps } from './utils/sitemap'
 
 export default defineConfig({
   title: 'ChatGPT中文版',
@@ -81,7 +80,7 @@ export default defineConfig({
     // 可选：自动提交到 IndexNow（通过环境变量控制）
     if (process.env.INDEXNOW_AUTO_SUBMIT === 'true') {
       try {
-        const hostname = process.env.INDEXNOW_HOST || 'chatgpt-china.com'
+        const hostname = process.env.INDEXNOW_HOST || 'chatgpt6-cn.com'
         const host = hostname.replace(/^https?:\/\//, '').replace(/\/$/, '')
         
         // 从路由配置获取所有 URL

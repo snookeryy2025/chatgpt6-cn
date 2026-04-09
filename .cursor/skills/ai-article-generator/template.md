@@ -56,6 +56,6 @@ layout: doc
 |------|-----------|
 | ChatGPT 官网 | `chatgpt-official-guide` |
 | GPT-5 介绍 | `gpt5-complete-guide` |
-| 国内使用 | `chatgpt-china-usage` |
+| 国内使用 | `chatgpt6-cn-usage` |
 | 中文版 | `chatgpt-chinese-version` |
 ```

@@ -66,4 +66,4 @@ layout: doc
 }
 ```
 
-目标文件：`/Users/ljw/gitwork/chatgpt-china-blog/docs/.vitepress/utils/routes.ts`
+目标文件：`/Users/ljw/gitwork/chatgpt6-cn-blog/docs/.vitepress/utils/routes.ts`

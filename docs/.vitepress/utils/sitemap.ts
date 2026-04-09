@@ -1,9 +1,9 @@
+import { execSync } from 'child_process'
+import { existsSync, statSync, writeFileSync } from 'fs'
+import { resolve } from 'path'
 import { SitemapStream, streamToPromise } from 'sitemap'
 import { Readable } from 'stream'
-import { writeFileSync, existsSync, statSync } from 'fs'
-import { resolve } from 'path'
-import { execSync } from 'child_process'
-import { getAllRoutes, getRoutesByCategory, type RouteItem } from './routes'
+import { getAllRoutes, getRoutesByCategory } from './routes'
 
 // 从中心化配置获取所有路由
 const links = getAllRoutes().map(route => ({
@@ -199,7 +199,7 @@ Sitemap: ${hostname}/sitemap.html`
 
 // 主函数：生成所有格式的 sitemap
 export async function generateSitemaps(outDir: string) {
-  const hostname = 'https://www.chatgpt-china.com'
+  const hostname = 'https://www.chatgpt6-cn.com'
   
   await generateXmlSitemap(hostname, outDir)
   generateTxtSitemap(hostname, outDir)

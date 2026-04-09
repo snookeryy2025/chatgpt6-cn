@@ -16,7 +16,7 @@ npm run track-changes
 
 这个脚本会：
 - 使用 git 检测 `docs/` 目录下所有变更的 `.md` 文件
-- 将文件路径转换为对应的 URL（例如：`docs/gemini/gemini3.md` → `https://www.chatgpt-china.com/gemini/gemini3`）
+- 将文件路径转换为对应的 URL（例如：`docs/gemini/gemini3.md` → `https://www.chatgpt6-cn.com/gemini/gemini3`）
 - 将变更的 URL 保存到 `changed-urls.json` 文件中
 
 ### 2. 提交到 IndexNow
@@ -37,7 +37,7 @@ npm run submit-indexnow
 你也可以直接指定要提交的 URL：
 
 ```bash
-node scripts/submit-indexnow.js https://www.chatgpt-china.com/gemini/gemini3 https://www.chatgpt-china.com/blog/gemini3-news
+node scripts/submit-indexnow.js https://www.chatgpt6-cn.com/gemini/gemini3 https://www.chatgpt6-cn.com/blog/gemini3-news
 ```
 
 ### 4. 提交后保留记录
@@ -45,7 +45,7 @@ node scripts/submit-indexnow.js https://www.chatgpt-china.com/gemini/gemini3 htt
 如果不想在提交后清空变更记录，可以手动指定 URL 并省略 `--clear` 标志：
 
 ```bash
-node scripts/submit-indexnow.js https://www.chatgpt-china.com/gemini/gemini3
+node scripts/submit-indexnow.js https://www.chatgpt6-cn.com/gemini/gemini3
 ```
 
 ## 📁 文件说明
@@ -69,7 +69,7 @@ npm run submit-indexnow
 
 ## ⚙️ 配置说明
 
-- **HOST**: 网站域名，默认 `www.chatgpt-china.com`（在脚本中可修改）
+- **HOST**: 网站域名，默认 `www.chatgpt6-cn.com`（在脚本中可修改）
 - **API Key**: IndexNow API 密钥文件应放在 `docs/public/` 目录下（`.txt` 格式）
 
 ## 📝 注意事项

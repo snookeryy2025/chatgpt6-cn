@@ -23,13 +23,13 @@ head:
       content: website
   - - meta
     - property: og:url
-      content: https://chatgpt-china.com
+      content: https://chatgpt6-cn.com
   - - meta
     - property: og:image
       content: /images/og-image.png
   - - link
     - rel: canonical
-      href: https://chatgpt-china.com
+      href: https://chatgpt6-cn.com
 ---
 
 <script setup>

@@ -1,13 +1,13 @@
 import fs from 'fs';
-import path from 'path';
 import https from 'https';
+import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.join(__dirname, '..', '..');  // 脚本在 docs/script/ 下，需要上两层到项目根目录
 const PUBLIC_DIR = path.join(ROOT_DIR, 'docs/public');
 const CHANGED_URLS_FILE = path.join(ROOT_DIR, 'changed-urls.json');
-const HOST = 'www.chatgpt-china.com';
+const HOST = 'www.chatgpt6-cn.com';
 const INDEXNOW_ENDPOINT = 'api.indexnow.org';
 
 // Find API key file
@@ -80,8 +80,8 @@ function isValidUrl(urlString, targetHost = HOST) {
 function extractUrlsFromMarkdown(content) {
   const urls = [];
   // 匹配 markdown 链接格式 [text](url) 中的 url，以及纯 URL
-  const mdLinkRegex = /\[([^\]]*)\]\((https?:\/\/www\.chatgpt-china\.com[^)\s]*)\)/g;
-  const plainUrlRegex = /(?<!["(<\[])(https?:\/\/www\.chatgpt-china\.com[^\s)"'<>]+)/g;
+  const mdLinkRegex = /\[([^\]]*)\]\((https?:\/\/www\.chatgpt6-cn\.com[^)\s]*)\)/g;
+  const plainUrlRegex = /(?<!["(<\[])(https?:\/\/www\.chatgpt6-cn\.com[^\s)"'<>]+)/g;
 
   let match;
   while ((match = mdLinkRegex.exec(content)) !== null) {

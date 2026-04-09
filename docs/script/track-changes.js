@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.join(__dirname, '..', '..');  // 脚本在 docs/script/ 下，需要上两层到项目根目录
 const DOCS_DIR = path.join(ROOT_DIR, 'docs');
 const CHANGED_URLS_FILE = path.join(ROOT_DIR, 'changed-urls.json');
-const HOST = 'www.chatgpt-china.com';
+const HOST = 'www.chatgpt6-cn.com';
 
 // 将文件路径转换为 URL
 function filePathToUrl(filePath) {
