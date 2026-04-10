@@ -51,18 +51,18 @@ onBeforeUnmount(() => {
       <!-- 标签 -->
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span>GPT-5 & GPT-4o 支持</span>
+        <span>GPT-6 & GPT-5 & GPT-4o 支持</span>
       </div>
 
       <!-- 主标题 -->
       <h1 class="hero-title">
-        <span class="title-line">探索 AI 的无限可能</span>
-        <span class="title-accent">与 ChatGPT 对话</span>
+        <span class="title-line">ChatGPT 国内使用指南 </span>
+        <span class="title-accent">探索 AI 的无限可能</span>
       </h1>
 
       <!-- 副标题 -->
       <p class="hero-subtitle">
-        告别繁琐，掌握最前沿的人工智能技术。<br />
+        与 ChatGPT 对话，告别繁琐，掌握最前沿的人工智能技术。<br />
         从对话交流到创意生成，让 AI 成为您工作和生活中的得力助手。
       </p>
 
@@ -82,11 +82,15 @@ onBeforeUnmount(() => {
           <span class="stat-value">24/7</span>
           <span class="stat-label">持续在线</span>
         </div>
+        <div class="stat-item">
+          <span class="stat-value">全面</span>
+          <span class="stat-label">支持所有主流模型</span>
+        </div>
       </div>
 
       <!-- CTA 按钮 -->
       <div class="hero-actions">
-        <a href="https://xsimplechat.com" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="https://lazymanchat.com" class="btn btn-primary" target="_blank" rel="noopener">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
           </svg>

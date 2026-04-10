@@ -59,7 +59,7 @@ URL Slug: `gpt5-vs-gpt4o-comparison`
 
 > 💡 提示：推荐观看 YouTube 上的 ChatGPT 注册演示视频
 
-如果您不想经历繁琐的注册流程，可以直接使用国内直达的 GPT 极速体验站：[gemini-cn.com](https://gemini-cn.com)。
+如果您不想经历繁琐的注册流程，可以直接使用国内直达的 GPT 极速体验站：[gemini-cnblog.com](https://gemini-cnblog.com)。
 
 ---
 

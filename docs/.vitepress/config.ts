@@ -4,8 +4,8 @@ import { generateSidebarConfig, getAllRoutes } from './utils/routes'
 import { generateSitemaps } from './utils/sitemap'
 
 export default defineConfig({
-  title: 'ChatGPT中文版',
-  description: '更好用的中文AI助手',
+  title: 'ChatGPT 官方指南',
+  description: '国内可用的 ChatGPT 镜像网站推荐，支持 GPT-5.1、GPT-5、GPT-4o、o1 等高级模型，无需科学上网，完全免费使用。附镜像站与官方版的区别对比、各模型能力分析和高级使用技巧。',
   
   // 外观配置 - 禁用深色模式，固定使用白天模式
   appearance: false,
@@ -20,16 +20,11 @@ export default defineConfig({
       `var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?0eed9ae0e6d2a83e431d3111fb3220a0";
+        hm.src = "https://hm.baidu.com/hm.js?7e243cf8d1f6b6375ec6ffc67b0ef882";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();`
     ],
-    // Google Analytics
-    /* [
-      'script',
-      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-JLRMT84H63' }
-    ], */
     [
       'script',
       {},
@@ -44,6 +39,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    siteTitle: "ChatGPT 国内使用指南",
     // 导航栏
     nav: [
       { text: '首页', link: '/' },
@@ -57,11 +53,11 @@ export default defineConfig({
 
     // 社交链接
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-repo' }
+      { icon: 'github', link: 'https://github.com' }
     ],
     footer: {
       message: 'Powered by ChatGPT中文版',
-      copyright: 'Copyright © 2025 ChatGPT中文版'
+      copyright: 'Copyright © 2025-2026 ChatGPT中文版'
     },
     lastUpdated: {
       text: '最后更新于',

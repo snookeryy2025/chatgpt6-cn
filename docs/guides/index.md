@@ -22,7 +22,7 @@ head:
       content: website
   - - meta
     - property: og:url
-      content: https://xsimplechat.com
+      content: https://lazymanchat.com
   - - meta
     - property: og:image
       content: /images/chatgpt-og-image.png
@@ -318,7 +318,7 @@ h1, h2, h3, h4, p, li {
 </div>
 
 <div class="button-container" style="text-align: center; margin: 2em 0;">
-  <a href="https://xsimplechat.com" class="cta-button">
+  <a href="https://lazymanchat.com" class="cta-button">
     🚀 ChatGPT 中文版
   </a>
   <a href="https://aihuoya.com" class="mirror-button">
@@ -573,12 +573,12 @@ h1, h2, h3, h4, p, li {
 
   <div class="qa-item">
     <h4>📱 如何开始使用？</h4>
-    <p>立即访问 <a href="https://xsimplechat.com">ChatGPT中文版</a> 开始体验，或阅读 <a href="/blog/guides/getting-started">新手指南</a> 了解详细使用方法。</p>
+    <p>立即访问 <a href="https://lazymanchat.com">ChatGPT中文版</a> 开始体验，或阅读 <a href="/blog/guides/getting-started">新手指南</a> 了解详细使用方法。</p>
   </div>
 </div>
 
 <div class="button-container" style="text-align: center; margin: 3em 0;">
-  <a href="https://xsimplechat.com" class="cta-button">
+  <a href="https://lazymanchat.com" class="cta-button">
     🚀 ChatGPT 中文版
   </a>
   <a href="https://aihuoya.com" class="mirror-button">

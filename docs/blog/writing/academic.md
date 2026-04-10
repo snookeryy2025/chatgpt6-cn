@@ -17,7 +17,7 @@ author: AI写作专家
 为了优化论文写作，您可以通过以下正规工具和网站获取辅助：
 
 - [lanjing.pro](https://ai.lanjingchat.com) 支持GPT-5、GPT o1、AI绘画
-- [xsimplechat](https://xsimplechat.com) 支持GPT-5、GPT4.0 turbo、GPT o1、AI PPT、插件
+- [lazymanchat](https://lazymanchat.com) 支持GPT-5、GPT4.0 turbo、GPT o1、AI PPT、插件
 
 
 ### 重要警示
@@ -109,7 +109,7 @@ author: AI写作专家
 ```
 
 ### 7. 如何与文件对话
-利用[xsimplechat](https://xsimplechat.com)的插件实现文件内容的对话。
+利用[lazymanchat](https://lazymanchat.com)的插件实现文件内容的对话。
 
 ### 8. 审查错误
 及时纠正ChatGPT的偏差，确保输出内容的一致性和正确性。
@@ -146,6 +146,6 @@ author: AI写作专家
 
 ## 结语
 
-本文旨在帮助你合理地利用ChatGPT进行论文写作有效辅助，而非完全依赖AI完成整个写作过程。希望你能通过这些技巧写出更高质量、更符合学术标准的论文。对于希望更加优质体验的用户，可以使用GPT-4o或o1模型，推荐[xsimplechat平台](https://xsimplechat.com)。
+本文旨在帮助你合理地利用ChatGPT进行论文写作有效辅助，而非完全依赖AI完成整个写作过程。希望你能通过这些技巧写出更高质量、更符合学术标准的论文。对于希望更加优质体验的用户，可以使用GPT-4o或o1模型，推荐[lazymanchat平台](https://lazymanchat.com)。
 
 **温馨提示：** ChatGPT能够在写作过程中提供灵感和帮助，但请仅作参考，避免过度依赖。关于事实性问题务必自行验证。

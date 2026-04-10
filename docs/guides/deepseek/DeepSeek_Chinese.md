@@ -11,7 +11,7 @@ author: AI Markdown高高手
 
 [DeepSeek](https://www.deepseek.ai) 是由深度求索（DeepSeek）自主研发的高性能大语言模型，以其开源、轻量化和强大的多场景适应能力受到广泛关注。DeepSeek 为用户提供智能对话、推理、AI搜索、文件处理、翻译、解题、创意写作、编程等多种服务。
 
-最新发布的 DeepSeek R1 满血版不仅性能媲美 OpenAI 的 o1，而且成本超低，仅为对手的3%。如果你希望了解其他支持GPT模型的服务，可以查看 [1个网站](https:/xsimplechat.com) 或 [这个平台](https://chat.lify.vip)。
+最新发布的 DeepSeek R1 满血版不仅性能媲美 OpenAI 的 o1，而且成本超低，仅为对手的3%。如果你希望了解其他支持GPT模型的服务，可以查看 [1个网站](https:/lazymanchat.com) 或 [这个平台](https://chat.lify.vip)。
 
 以下推荐7个可以使用到满血版 DeepSeek R1 的网站，重点是稳定不卡顿，不会出现服务器繁忙情况。
 

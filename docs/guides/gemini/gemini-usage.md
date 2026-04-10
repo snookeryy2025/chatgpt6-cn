@@ -24,7 +24,7 @@ head:
 
 **推荐站点**：
 1.  **[AI 智慧岛](https://ai.lanjingchat.com)**：聚合了 Gemini 3 Pro、GPT-5、Claude 3.5 等多款模型，一站式体验。
-2.  **[XSimple](https://xsimplechat.com)**：稳定运营的老牌站点，支持 Gemini 高级版功能。
+2.  **[XSimple](https://lazymanchat.com)**：稳定运营的老牌站点，支持 Gemini 高级版功能。
 
 ## 🌍 方案二：Google 官网直连（进阶用户）
 

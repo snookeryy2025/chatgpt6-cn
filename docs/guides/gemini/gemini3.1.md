@@ -25,7 +25,7 @@ sidertitle: Gemini 3.1 Pro 发布：Google Gemini 官网入口、国内使用教
 > **💡 推荐使用工具：**
 > - **Gemini/GPT 聚合站**：[https://chat.huoyachat.com](https://chat.huoyachat.com) (支持多模型切换)
 > - **AI 镜像站直达**：[https://lazymanchat.com](https://lazymanchat.com) (高速稳定)
-> - **Gemini 中文站**：[https://gemini-cn.com](https://gemini-cn.com)
+> - **Gemini 中文站**：[https://gemini-cnblog.com](https://gemini-cnblog.com)
 
 ---
 

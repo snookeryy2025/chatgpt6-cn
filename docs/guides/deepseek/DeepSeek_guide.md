@@ -12,11 +12,11 @@ DeepSeek最近一段时间由于用户激增和外部攻击，一直处于不可
 为了寻找合适的Deepseek使用平台，我收集了7个可以使用到满血版 DeepSeek R1 的网站
 包括AI智慧岛、OpenRouter、Azure等。此外，这些平台的 API 兼容性较强，能够与各种应用无缝集成。
 
-## 1、[XSimple](https://xsimplechat.com)
+## 1、[XSimple](https://lazymanchat.com)
 
-在 [xsimplechat.com](https://xsimplechat.com)，你可以使用到满血版的DeepSeek R1。体验了一下，速度还挺快！不仅如此，你还能够使用GPT4、GPT o1、GPT o3 mini、Midjourney等等。它的好处是生态完善，不止有对话功能，还有AI助手、AI绘画、AI生成PPT、AI翻译等等。可以说功能非常多，满足你不同的需求。
+在 [lazymanchat.com](https://lazymanchat.com)，你可以使用到满血版的DeepSeek R1。体验了一下，速度还挺快！不仅如此，你还能够使用GPT4、GPT o1、GPT o3 mini、Midjourney等等。它的好处是生态完善，不止有对话功能，还有AI助手、AI绘画、AI生成PPT、AI翻译等等。可以说功能非常多，满足你不同的需求。
 
-另外，如果你想进一步了解支持GPT4.0、GPT4.0 turbo、GPT o1、AI PPT、插件等功能，可以访问[这个网站](https://xsimplechat.com)。
+另外，如果你想进一步了解支持GPT4.0、GPT4.0 turbo、GPT o1、AI PPT、插件等功能，可以访问[这个网站](https://lazymanchat.com)。
 
 ## 2、微软Azure
 

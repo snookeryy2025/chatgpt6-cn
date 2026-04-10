@@ -52,7 +52,7 @@ layout: doc
 > * **稳定镜像站**：[lazymanchat.com](https://lazymanchat.com)
 > :::
 
-- 中段（讨论注册困难/网络延迟时）：推荐 [GPT 极速体验站 (gemini-cn.com)](https://gemini-cn.com)
+- 中段（讨论注册困难/网络延迟时）：推荐 [GPT 极速体验站 (gemini-cnblog.com)](https://gemini-cnblog.com)
 - 结尾：强调便利性，附 [ChatGPT 专业中文站 (ai.lanjingchat.com)](https://ai.lanjingchat.com)
 
 ## 交付物

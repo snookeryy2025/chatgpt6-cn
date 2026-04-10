@@ -150,6 +150,7 @@ export function generateSidebarConfig() {
   const blogRoutes = allRoutes.filter(r => r.url.startsWith('/blog/') && r.url !== '/blog/')
   
   // 进一步分类 guides
+  const chatgptGuides = guidesRoutes.filter(r => r.url.includes('/guides/chatgpt/'))
   const deepseekGuides = guidesRoutes.filter(r => r.url.includes('/guides/deepseek/'))
   const geminiGuides = guidesRoutes.filter(r => r.url.includes('/guides/gemini/'))
   const chatgptDevGuides = guidesRoutes.filter(r => r.url.includes('/guides/chatgpt-dev/'))
@@ -175,6 +176,11 @@ export function generateSidebarConfig() {
         text: '使用指南',
         collapsed: false,
         items: basicGuides.map(item => ({ text: item.title, link: item.url }))
+      }] : []),
+      ...(chatgptGuides.length > 0 ? [{
+        text: 'ChatGPT教程',
+        collapsed: true,
+        items: chatgptGuides.map(item => ({ text: item.title, link: item.url }))
       }] : []),
       ...(deepseekGuides.length > 0 ? [{
         text: 'DeepSeek教程',

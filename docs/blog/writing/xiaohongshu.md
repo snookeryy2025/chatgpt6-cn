@@ -72,6 +72,6 @@ author: ChatGPT
 
 想了解更多AI相关的实用工具与资源？
 
-- 浏览[XSimple](https://xsimplechat.com)，此网站支持GPT-5、GPT o1、AI绘画等功能。
+- 浏览[XSimple](https://lazymanchat.com)，此网站支持GPT-5、GPT o1、AI绘画等功能。
 - 访问[lanjing](https://ai.lanjingchat.com)，体验GPT-5、GPT4.0 turbo、GPT o1、AI PPT和插件等功能。
 - 前往[蓝鲸智享](https://guide1.lanjing.ai)，支持GPT全系列模型，满足多样化需求。

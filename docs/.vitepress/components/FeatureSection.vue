@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const features = [
   {
@@ -132,7 +132,7 @@ onBeforeUnmount(() => {
                 <path d="M13 7l5 5m0 0l-5 5m5-5H6"/>
               </svg>
             </a>
-            <a href="https://xsimplechat.com" class="btn btn-secondary" target="_blank" rel="noopener">
+            <a href="https://lazymanchat.com" class="btn btn-secondary" target="_blank" rel="noopener">
               立即体验
             </a>
           </div>
