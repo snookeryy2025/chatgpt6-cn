@@ -103,13 +103,49 @@ a:hover {
 .VPNavBar {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+}
+
+/* 常规页 / 首页滚动后：浅色顶栏 */
+.VPNavBar:not(.home),
+.VPNavBar.home:not(.top) {
   background: rgba(255, 255, 255, 0.75) !important;
   border-bottom: 1px solid rgba(115, 159, 177, 0.18);
 }
 
-:root.dark .VPNavBar {
+:root.dark .VPNavBar:not(.home),
+:root.dark .VPNavBar.home:not(.top) {
   background: rgba(17, 25, 40, 0.78) !important;
   border-bottom: 1px solid rgba(111, 174, 196, 0.24);
+}
+
+/* 桌面端首页首屏：顶栏叠在 Hero 上，深色半透明 */
+@media (min-width: 960px) {
+  .VPNavBar.home.top {
+    background: rgba(3, 7, 18, 0.55) !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  }
+
+  .VPNavBar.home.top .title,
+  .VPNavBar.home.top .VPLink.link {
+    color: rgba(241, 245, 249, 0.95) !important;
+  }
+
+  .VPNavBar.home.top .VPSocialLink {
+    color: rgba(241, 245, 249, 0.9) !important;
+  }
+}
+
+@media (max-width: 959px) {
+  /* 移动端顶栏在文档流中，仍用浅色底 */
+  .VPNavBar.home {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-bottom: 1px solid rgba(115, 159, 177, 0.18);
+  }
+
+  :root.dark .VPNavBar.home {
+    background: rgba(17, 25, 40, 0.78) !important;
+    border-bottom: 1px solid rgba(111, 174, 196, 0.24);
+  }
 }
 
 .VPButton.brand {
@@ -184,6 +220,33 @@ code {
 
 .layout {
   background: transparent !important;
+}
+
+/* 首页：取消 VPHomeContent 容器的最大宽度与左右内边距，区块铺满视口 */
+.VPHome .vp-doc.container {
+  max-width: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 首页：主内容区不要 flex 拉伸填屏，否则会在最后一屏内容下方出现大块浅色留白 */
+.Layout .VPContent.is-home {
+  flex-grow: 0;
+}
+
+/* 首页：去掉 VitePress 默认的底部大外边距 */
+.VPHome {
+  margin-bottom: 0 !important;
+}
+
+/* 桌面端首页：不为 fixed 顶栏预留 padding-top，Hero 背景从视口顶部铺满（正文安全区在组件内） */
+@media (min-width: 960px) {
+  .Layout .VPContent.is-home {
+    padding-top: 0 !important;
+  }
 }
 
 .VPFooter {

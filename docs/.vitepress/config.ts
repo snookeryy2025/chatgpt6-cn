@@ -48,7 +48,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'Blog', link: '/blog/' },
-      { text: 'ChatGPT介绍', link: '/chatgpt/' },
+     /*  { text: 'ChatGPT介绍', link: '/chatgpt/' }, */
       { text: 'ChatGPT使用指南', link: '/guides/' }
     ],
 

@@ -1,439 +1,487 @@
-<script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-const titleNumber = ref(0)
-const baseItems = [
-  'ChatGPT 对话', 
-  'AI 高效写作', 
-  '自动生成PPT', 
-  'AI 随心绘画', 
-  'AI 帮你读文件',
-  '专业级翻译',
-  '400+ AI 助手',
-  'AI 学术插件'
-]
+const isVisible = ref(false)
+const mouseX = ref(0)
+const mouseY = ref(0)
 
-// 创建三倍长度的数组，用于无限滚动
-const titles = computed(() => [...baseItems, ...baseItems, ...baseItems])
-const startIndex = computed(() => baseItems.length)
-
-// 当前显示的索引
-const currentIndex = computed(() => {
-  const total = baseItems.length
-  const current = titleNumber.value % total
-  return current + startIndex.value
-})
-
-let intervalId
-
-const updateTitle = () => {
-  titleNumber.value++
-  // 当滚动到第二组的末尾时，悄悄重置到第二组的开头
-  if (titleNumber.value >= baseItems.length * 2) {
-    setTimeout(() => {
-      titleNumber.value = baseItems.length
-    }, 0)
+const handleMouseMove = (e: MouseEvent) => {
+  const rect = document.querySelector('.hero-container')?.getBoundingClientRect()
+  if (rect) {
+    mouseX.value = ((e.clientX - rect.left) / rect.width - 0.5) * 20
+    mouseY.value = ((e.clientY - rect.top) / rect.height - 0.5) * 20
   }
 }
 
 onMounted(() => {
-  titleNumber.value = baseItems.length // 从中间组开始
-  intervalId = setInterval(updateTitle, 1200)
+  setTimeout(() => {
+    isVisible.value = true
+  }, 100)
+  window.addEventListener('mousemove', handleMouseMove)
 })
 
 onBeforeUnmount(() => {
-  if (intervalId) clearInterval(intervalId)
+  window.removeEventListener('mousemove', handleMouseMove)
 })
 </script>
 
 <template>
-  <div class="hero-container">
-    <div class="hero-background">
-      <div class="background-veil"></div>
-      <div class="bubble bubble-1"></div>
-      <div class="bubble bubble-2"></div>
-      <div class="bubble bubble-3"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-card">
-        <div class="title-container">
-          <h2 class="main-title">
-            <span class="highlight">ChatGPT 中文版将获得</span>
-            <div class="animated-text-container">
-              <div class="animated-text">
-                <div 
-                  v-for="(title, index) in titles" 
-                  :key="`${title}-${index}`"
-                  class="text-item"
-                  :style="{
-                    transform: `translateY(${(index - currentIndex) * 100}%)`,
-                    opacity: Math.abs(index - currentIndex) < 1 ? 1 : 0,
-                    transition: `all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)`
-                  }"
-                >
-                  <span class="gradient-text">{{ title }}</span>
-                </div>
-              </div>
-            </div>
-          </h2>
-
-          <p class="description">
-            为中文用户打造的AI对话助手，让您的AI对话体验更自然、更流畅。
-            告别繁琐的使用方法，享受全球顶级AI带来的效率提升。
-          </p>
-        </div>
-
-        <div class="cta-buttons">
-          <a href="https://xsimplechat.com" class="primary-button">
-            ChatGPT 中文版 →
-          </a>
-          <a href="https://aihuoya.com" class="secondary-button">
-            ChatGPT 镜像站 →
-          </a>
-        </div>
+  <section class="hero-container" :style="{ '--mouse-x': `${mouseX}px`, '--mouse-y': `${mouseY}px` }">
+    <!-- 背景效果层 -->
+    <div class="hero-bg">
+      <!-- 网格背景 -->
+      <div class="grid-bg"></div>
+      <!-- 渐变光晕 -->
+      <div class="glow-orb glow-1"></div>
+      <div class="glow-orb glow-2"></div>
+      <div class="glow-orb glow-3"></div>
+      <!-- 粒子点缀 -->
+      <div class="particles">
+        <span v-for="i in 20" :key="i" class="particle" :style="{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 5}s`,
+          animationDuration: `${3 + Math.random() * 4}s`
+        }"></span>
       </div>
     </div>
-  </div>
+
+    <!-- 主内容 -->
+    <div class="hero-content" :class="{ visible: isVisible }">
+      <!-- 标签 -->
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>GPT-5 & GPT-4o 支持</span>
+      </div>
+
+      <!-- 主标题 -->
+      <h1 class="hero-title">
+        <span class="title-line">探索 AI 的无限可能</span>
+        <span class="title-accent">与 ChatGPT 对话</span>
+      </h1>
+
+      <!-- 副标题 -->
+      <p class="hero-subtitle">
+        告别繁琐，掌握最前沿的人工智能技术。<br />
+        从对话交流到创意生成，让 AI 成为您工作和生活中的得力助手。
+      </p>
+
+      <!-- 统计数据 -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">400+</span>
+          <span class="stat-label">AI 助手</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">秒级</span>
+          <span class="stat-label">响应速度</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">24/7</span>
+          <span class="stat-label">持续在线</span>
+        </div>
+      </div>
+
+      <!-- CTA 按钮 -->
+      <div class="hero-actions">
+        <a href="https://xsimplechat.com" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+          立即开始使用
+        </a>
+        <a href="/guides/chatgpt-china-mirror" class="btn btn-secondary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          阅读使用指南
+        </a>
+      </div>
+
+      <!-- 底部说明 -->
+      <p class="hero-footer">
+        无需翻墙 · 中文优化 · 免费体验
+      </p>
+    </div>
+
+    <!-- 滚动提示 -->
+    <div class="scroll-indicator" :class="{ visible: isVisible }">
+      <span>向下滚动探索更多</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </section>
 </template>
 
 <style scoped>
 .hero-container {
-  width: 100%;
-  min-height: 100vh;
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(155deg, #f0f9ff 0%, #fff6f9 100%);
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem 1.5rem;
+  overflow: hidden;
+  background: linear-gradient(165deg, #030712 0%, #0f172a 50%, #1e1b4b 100%);
+  /* 移动端顶栏在文档流内，无需叠加导航高度 */
+  padding: 6rem 2rem 6rem;
 }
 
-.hero-background {
+@media (min-width: 960px) {
+  .hero-container {
+    /* 桌面 fixed 顶栏：背景从视口顶开始，正文留在导航下方安全区 */
+    padding-top: calc(var(--vp-nav-height) + 3.5rem);
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* 背景效果 */
+.hero-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
-.hero-background::before {
-  content: '';
+.grid-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(166, 233, 248, 0.45), transparent 55%),
-    radial-gradient(circle at 80% 15%, rgba(255, 210, 236, 0.4), transparent 60%),
-    radial-gradient(circle at 30% 85%, rgba(214, 248, 189, 0.45), transparent 60%);
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
 }
 
-.background-veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.2) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.bubble {
+.glow-orb {
   position: absolute;
   border-radius: 50%;
-  mix-blend-mode: screen;
-  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  opacity: 0.6;
-  animation: floatBubble 18s ease-in-out infinite;
+  filter: blur(100px);
+  opacity: 0.4;
+  animation: float 20s ease-in-out infinite;
 }
 
-.bubble-1 {
-  width: 320px;
-  height: 320px;
-  top: -140px;
-  left: -90px;
+.glow-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5), transparent 70%);
 }
 
-.bubble-2 {
-  width: 220px;
-  height: 220px;
-  top: 18%;
-  right: 14%;
-  background: radial-gradient(circle at 35% 35%, rgba(192, 230, 255, 0.75), rgba(192, 230, 255, 0));
-  animation-delay: -5s;
-}
-
-.bubble-3 {
-  width: 280px;
-  height: 280px;
+.glow-2 {
+  width: 500px;
+  height: 500px;
   bottom: -150px;
-  left: 26%;
-  background: radial-gradient(circle at 35% 35%, rgba(255, 221, 236, 0.65), rgba(255, 221, 236, 0));
-  animation-delay: -10s;
+  left: -100px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.5), transparent 70%);
+  animation-delay: -7s;
 }
 
-@keyframes floatBubble {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+.glow-3 {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent 70%);
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.6);
+  border-radius: 50%;
+  animation: particle-float 5s ease-in-out infinite;
+}
+
+@keyframes particle-float {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: translateY(0) scale(1);
   }
-  50% {
-    transform: translate3d(0, -18px, 0) scale(1.05);
+  50% { 
+    opacity: 0.8;
+    transform: translateY(-30px) scale(1.2);
   }
 }
 
+/* 主内容 */
 .hero-content {
   position: relative;
   z-index: 1;
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-card {
-  width: 100%;
-  max-width: 920px;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 32px;
-  padding: 4rem 3.5rem;
-  box-shadow: 0 32px 60px -40px rgba(86, 148, 171, 0.65);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-}
-
-.title-container {
+  max-width: 900px;
   text-align: center;
-  max-width: 40rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.main-title {
-  font-size: 3.25rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  font-weight: 800;
-  color: #1d3557;
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.highlight {
-  color: #64b5a0;
-  font-weight: 600;
-}
-
-.animated-text-container {
-  height: 4rem;
-  position: relative;
-  margin-top: 1rem;
-  overflow: hidden;
-}
-
-.animated-text {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.text-item {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+/* 标签 */
+.hero-badge {
+  display: inline-flex;
   align-items: center;
-  will-change: transform, opacity;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 999px;
+  color: #60a5fa;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
 }
 
-.gradient-text {
-  font-size: 3rem;
-  font-weight: 700;
-  background: linear-gradient(120deg, #5ec5b4 0%, #8acdea 45%, #f7b9d5 90%);
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+}
+
+/* 主标题 */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+}
+
+.title-line {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title-accent {
+  display: block;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
-  animation: shimmer 8s ease-in-out infinite;
+  animation: gradient-shift 4s ease-in-out infinite;
 }
 
-@keyframes shimmer {
-  from {
-    background-position: 0% center;
-  }
-  to {
-    background-position: 200% center;
-  }
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
 }
 
-.description {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  color: #4c6a77;
+/* 副标题 */
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: #94a3b8;
+  margin: 0 0 3rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.cta-buttons {
+/* 统计数据 */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, rgba(148, 163, 184, 0.3), transparent);
+}
+
+/* CTA 按钮 */
+.hero-actions {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
-.primary-button {
+.btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2.4rem;
-  border-radius: 999px;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 1.15rem;
   text-decoration: none;
-  background: linear-gradient(135deg, #a6e3e9 0%, #cbf1f5 100%);
-  color: #1b4965;
-  border: none;
-  box-shadow: 0 18px 32px -22px rgba(86, 148, 171, 0.95);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
-.secondary-button {
-  display: inline-flex;
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* 底部说明 */
+.hero-footer {
+  font-size: 0.875rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* 滚动提示 */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2.4rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 1.15rem;
-  text-decoration: none;
-  background: linear-gradient(135deg, #ffe5f3 0%, #f8d3e0 100%);
-  color: #8a4d76;
-  border: none;
-  box-shadow: 0 18px 32px -22px rgba(197, 134, 166, 0.7);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #475569;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.5s ease 1s;
 }
 
-.primary-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 36px -24px rgba(86, 148, 171, 0.95);
+.scroll-indicator.visible {
+  opacity: 1;
 }
 
-.secondary-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 22px 36px -24px rgba(197, 134, 166, 0.85);
+.scroll-indicator svg {
+  width: 20px;
+  height: 20px;
+  animation: bounce 2s ease-in-out infinite;
 }
 
-.primary-button:active,
-.secondary-button:active {
-  transform: translateY(-1px);
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
-@media (max-width: 1024px) {
-  .hero-container {
-    padding: 5rem 1.5rem;
-  }
-
-  .hero-card {
-    padding: 3.5rem 3rem;
-  }
-}
-
+/* 响应式 */
 @media (max-width: 768px) {
   .hero-container {
-    padding: 4rem 1.25rem;
+    padding: 6rem 1.5rem 4rem;
   }
 
-  .hero-card {
-    padding: 2.8rem 2.25rem;
-    border-radius: 24px;
-    gap: 2.5rem;
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.25rem;
   }
 
-  .gradient-text {
-    font-size: 2.2rem;
+  .stat-divider {
+    width: 60px;
+    height: 1px;
   }
 
-  .animated-text-container {
-    height: 3.2rem;
+  .stat-item {
+    flex-direction: row;
+    gap: 1rem;
   }
 
-  .cta-buttons {
+  .hero-actions {
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
   }
 
-  .primary-button,
-  .secondary-button {
+  .btn {
     width: 100%;
     max-width: 280px;
     justify-content: center;
   }
+
+  .scroll-indicator {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-card {
-    padding: 2.4rem 1.75rem;
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
   }
 
-  .main-title {
-    font-size: 2.5rem;
+  .stat-value {
+    font-size: 1.5rem;
   }
-
-  .description {
-    font-size: 1.05rem;
-  }
-}
-
-:global(.dark) .hero-container {
-  background: linear-gradient(155deg, #0f172a 0%, #1f2a44 100%);
-}
-
-:global(.dark) .background-veil {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.25) 100%);
-}
-
-:global(.dark) .hero-background::before {
-  background: radial-gradient(circle at 25% 25%, rgba(91, 190, 202, 0.35), transparent 55%),
-    radial-gradient(circle at 75% 20%, rgba(186, 161, 255, 0.28), transparent 60%),
-    radial-gradient(circle at 35% 80%, rgba(123, 215, 182, 0.32), transparent 60%);
-  opacity: 0.75;
-}
-
-:global(.dark) .bubble {
-  opacity: 0.4;
-}
-
-:global(.dark) .hero-card {
-  background: rgba(17, 25, 40, 0.72);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  box-shadow: 0 32px 60px -40px rgba(15, 23, 42, 0.75);
-}
-
-:global(.dark) .main-title {
-  color: #e2e8f0;
-}
-
-:global(.dark) .highlight {
-  color: #82e1c6;
-}
-
-:global(.dark) .description {
-  color: #cbd5f5;
-}
-
-:global(.dark) .primary-button {
-  background: linear-gradient(135deg, rgba(96, 212, 208, 0.85) 0%, rgba(148, 239, 233, 0.85) 100%);
-  color: #0f2335;
-  box-shadow: 0 20px 34px -22px rgba(96, 212, 208, 0.95);
-}
-
-:global(.dark) .secondary-button {
-  background: linear-gradient(135deg, rgba(232, 170, 221, 0.85) 0%, rgba(255, 205, 225, 0.85) 100%);
-  color: #2a1f33;
-  box-shadow: 0 20px 34px -22px rgba(232, 170, 221, 0.9);
-}
-
-:global(.dark) .primary-button:hover {
-  box-shadow: 0 22px 38px -24px rgba(96, 212, 208, 1);
-}
-
-:global(.dark) .secondary-button:hover {
-  box-shadow: 0 22px 38px -24px rgba(232, 170, 221, 0.95);
 }
 </style>
