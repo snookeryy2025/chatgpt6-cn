@@ -8,7 +8,7 @@ pnpm-lock.yaml
 docs/.vitepress/dist
 docs/.vitepress/cache
 
-docs/public/*.txt
+# docs/public/*.txt
 # Logs
 *.log
 npm-debug.log*

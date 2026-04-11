@@ -60,9 +60,9 @@ function clearChangedUrls() {
   }
 }
 
-// 清理 URL 末尾的非法字符
+// 清理 URL 末尾的非法字符（保留 .html 等合法扩展名）
 function cleanUrl(url) {
-  return url.replace(/[`）)】」』】.,;:!?]+$/, '').trim();
+  return url.replace(/[`）)】」』】,;:!?]+$/, '').trim();
 }
 
 // 验证 URL 是否合法且属于目标网站
@@ -76,7 +76,7 @@ function isValidUrl(urlString, targetHost = HOST) {
   }
 }
 
-// 从 markdown 文件中提取自己网站的 URL
+// 从 markdown 文件中提取自己网站的 URL（确保带 .html 后缀）
 function extractUrlsFromMarkdown(content) {
   const urls = [];
   // 匹配 markdown 链接格式 [text](url) 中的 url，以及纯 URL
@@ -87,18 +87,27 @@ function extractUrlsFromMarkdown(content) {
   while ((match = mdLinkRegex.exec(content)) !== null) {
     const rawUrl = cleanUrl(match[2]);
     if (isValidUrl(rawUrl)) {
-      urls.push(rawUrl);
+      urls.push(ensureHtmlExt(rawUrl));
     }
   }
 
   while ((match = plainUrlRegex.exec(content)) !== null) {
     const rawUrl = cleanUrl(match[1]);
     if (isValidUrl(rawUrl)) {
-      urls.push(rawUrl);
+      urls.push(ensureHtmlExt(rawUrl));
     }
   }
 
   return [...new Set(urls)];
+}
+
+// 确保 URL 带有 .html 后缀（如果还没有的话）
+function ensureHtmlExt(url) {
+  if (url.endsWith('.html') || url.endsWith('.xml') || url.endsWith('.json') || url.endsWith('/')) {
+    return url;
+  }
+  // 如果 URL 末尾有 / 结尾或没有扩展名，追加 .html
+  return url.replace(/\/?$/, '.html');
 }
 
 // 扫描目录生成页面 URL
@@ -116,7 +125,7 @@ function generatePageUrlsFromDir(dir, baseUrl, rootOffset = '') {
         }
       } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'index.md') {
         const slug = entry.name.replace('.md', '');
-        urls.add(`${baseUrl}${prefix}/${slug}`);
+        urls.add(`${baseUrl}${prefix}/${slug}.html`);
       }
     }
   }
